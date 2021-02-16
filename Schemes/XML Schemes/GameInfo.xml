@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GameInfo>
+    <appid>1</appid>
+    <Title>Abc</Title>
+    <Rating>3</Rating>
+    <Developer>
+        <element>
+            <Developer>AbcGameDev</Developer>
+        </element>
+        <element>
+            <Developer>CbaGameDev</Developer>
+        </element>
+    </Developer>
+    <Publisher>
+        <element>
+            <Publisher>AbcGameDev</Publisher>
+        </element>
+        <element>
+            <Publisher>CbaGameDev</Publisher>
+        </element>
+    </Publisher>
+</GameInfo>
