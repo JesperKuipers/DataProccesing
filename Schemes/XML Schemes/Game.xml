@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Game>
+    <appid>1</appid>
+    <Title>Abc</Title>
+    <Rating>3</Rating>
+    <Developer>
+        <element>
+            <Developer>AbcGameDev</Developer>
+        </element>
+        <element>
+            <Developer>CbaGameDev</Developer>
+        </element>
+    </Developer>
+    <Publisher>
+        <element>
+            <Publisher>AbcGameDev</Publisher>
+        </element>
+        <element>
+            <Publisher>CbaGameDev</Publisher>
+        </element>
+    </Publisher>
+    <Players>
+        <element>
+            <loccountrycode>NLD</loccountrycode>
+            <playtime_2weeks>12</playtime_2weeks>
+            <playtime_forever>180</playtime_forever>
+            <steamid>1</steamid>
+        </element>
+        <element>
+            <loccountrycode>NLD</loccountrycode>
+            <playtime_2weeks>17</playtime_2weeks>
+            <playtime_forever>250</playtime_forever>
+            <steamid>2</steamid>
+        </element>
+    </Players>   
+</Game>
