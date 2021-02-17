@@ -1,0 +1,8 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:attribute default="http://json-schema.org/draft-07/schema#" name="$schema" type="xs:string"/>
+    <xs:attribute default="http://json-schema.org/draft-07/schema#" name="$id" type="xs:string"/>
+    <xs:attribute default="JSON schema" name="title" type="xs:string"/>
+    <xs:attribute default="Schema that is made for the Steam Dataset made in 2016 (https://steam.internet.byu.edu/)" name="description" type="xs:string"/>
+    <xs:attribute default="" name="default" type="xs:string"/>
+    <xs:attribute default="[object Object]" name="examples" type="xs:string"/>
+</xs:schema>

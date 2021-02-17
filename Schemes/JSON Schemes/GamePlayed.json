@@ -8,28 +8,21 @@
   "examples": [
     {
       "appid": "number",
-      "Title": {
-        "type": "string"
+      "steamid": "number",
+      "loccountrycode": {
+        "type": "string",
+        "minimum": 1,
+        "maximum": 3,
+        "description": "string, ISO-3166 code for the country"
       },
-      "Rating": {
+      "playtime_forever": {
         "type": "number",
-        "minimum": -1,
-        "maximum": 100
+        "description": "time in minutes"
       },
-      "Developer": [
-        {
-          "Developer": {
-            "type": "string"
-          }
-        }
-      ],
-      "Publisher": [
-        {
-          "Publisher": {
-            "type": "string"
-          }
-        }
-      ]
+      "playtime_2weeks": {
+        "type": "number",
+        "description": "time in minutes"
+      }
     }
   ]
 }
