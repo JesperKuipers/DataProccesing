@@ -1,35 +1,33 @@
 {
-    "appid" : 1,
-    "Title" : "Abc",
-    "Rating" : 3,
-    "Developer" : [ 
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "JSON schema",
+  "description": "Schema that is made for the Steam Dataset made in 2016 (https://steam.internet.byu.edu/)",
+  "default": [],
+  "examples": [
+    {
+      "appid": "integer",
+      "Title": "string",
+      "Rating": "integer, between -1 and 100",
+      "Developer": [
         {
-            "Developer" : "AbcGameDev"
-        },
-        {
-            "Developer" : "CbaGameDev"
+          "Developer": "string"
         }
-    ],
-    "Publisher" : [ 
+      ],
+      "Publisher": [
         {
-            "Publisher" : "AbcGameDev"
-        },
-        {
-            "Publisher" : "CbaGameDev"
+          "Publisher": "string"
         }
-    ],
-    "Players" : [ 
+      ],
+      "Players": [
         {
-            "steamid" : 1,
-            "loccountrycode" : "NLD",
-            "playtime_forever" : 180,
-            "playtime_2weeks" : 12
-        },
-        {
-            "steamid" : 2,
-            "loccountrycode" : "NLD",
-            "playtime_forever" : 250,
-            "playtime_2weeks" : 17
+          "steamid": 1,
+          "loccountrycode": "string, ISO-3166 code for the country",
+          "playtime_forever": "integer, time in minutes",
+          "playtime_2weeks": "integer, time in minutes"
         }
-    ]
+      ]
+    }
+  ]
 }

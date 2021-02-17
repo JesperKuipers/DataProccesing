@@ -1,0 +1,35 @@
+{
+    "appid" : 1,
+    "Title" : "Abc",
+    "Rating" : 3,
+    "Developer" : [ 
+        {
+            "Developer" : "AbcGameDev"
+        },
+        {
+            "Developer" : "CbaGameDev"
+        }
+    ],
+    "Publisher" : [ 
+        {
+            "Publisher" : "AbcGameDev"
+        },
+        {
+            "Publisher" : "CbaGameDev"
+        }
+    ],
+    "Players" : [ 
+        {
+            "steamid" : 1,
+            "loccountrycode" : "NLD",
+            "playtime_forever" : 180,
+            "playtime_2weeks" : 12
+        },
+        {
+            "steamid" : 2,
+            "loccountrycode" : "NLD",
+            "playtime_forever" : 250,
+            "playtime_2weeks" : 17
+        }
+    ]
+}
