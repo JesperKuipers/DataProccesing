@@ -19,7 +19,7 @@ We need to make an application that uses the REST API, the apps need to switch b
 ## Tools used
 | Tool            |  Used for                         | Website                                                                                                   |
 | :-------------: | :-------------:                   | :-----------------------:                                                                                 |
-| Xampp           |  Hosting local MySQL DB           | <a href="https://www.apachefriends.org/index.html" target="_blank" rel="noopener noreferrer">Website</a>  |
+| XAMPP           |  Hosting local MySQL DB           | <a href="https://www.apachefriends.org/index.html" target="_blank" rel="noopener noreferrer">Website</a>  |
 | HeidiSQL        |  Importing SQL dump               | <a href="https://www.heidisql.com/" target="_blank" rel="noopener noreferrer">Website</a>                 |
 | EmEditor        |  Editing and splitting .sql file  | <a href="https://www.emeditor.com/" target="_blank" rel="noopener noreferrer">Website</a>                 |
 
@@ -39,6 +39,9 @@ mysql --init-command="SET SESSION FOREIGN_KEY_CHECKS=0;SET UNIQUE_CHECKS=0;" -u 
 <p><img src="https://user-images.githubusercontent.com/44586411/110246660-c302d080-7f68-11eb-9403-fcaa29c3c854.gif"></img></p>
 
 <p>The SQL file (160 GB) is to big even tho HeidiSQL splits the file into multiple queries.<br>
-I solved this issue by using <a href="https://www.emeditor.com/" target="_blank" rel="noopener noreferrer">EmEditor</a>. EmEditor is made to load big files and also works great to edit big files. But the feuture I used the most is the splitting tool, with this I was able to spilt the SQL file down in 8 files. Each file consist out of 1 table, except for some small tables.</p>
+I solved this issue by using <a href="https://www.emeditor.com/" target="_blank" rel="noopener noreferrer">EmEditor</a>.<br> 
+EmEditor is made to load big files and also works great to edit big files.<br> 
+But the feuture I used the most is the splitting tool, with this I was able to spilt the SQL file down in 8 files.<br> 
+Each file consist out of 1 table, except for some small tables.</p>
 
 <p>With the smaller SQL files I was able to import the tables I need into MySQL with the help of HeidiSQL.</p>
