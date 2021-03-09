@@ -22,7 +22,8 @@ We need to make an application that uses the REST API, the apps need to switch b
 | XAMPP           |  Hosting local MySQL DB           | <a href="https://www.apachefriends.org/index.html" target="_blank" rel="noopener noreferrer">Website</a>  |
 | HeidiSQL        |  Importing SQL dump               | <a href="https://www.heidisql.com/" target="_blank" rel="noopener noreferrer">Website</a>                 |
 | EmEditor        |  Editing and splitting .sql file  | <a href="https://www.emeditor.com/" target="_blank" rel="noopener noreferrer">Website</a>                 |
-
+| SSMA            |  Migration tool from MySQL to MSSQL | <a href="https://www.microsoft.com/en-us/download/details.aspx?id=54257" target="_blank" rel="noopener noreferrer">Website</a>                               |
+| SSMS            |  Management Studio for MSSQL      | <a href="https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15" target="_blank" rel="noopener noreferrer">Website</a> |
 
 
 ## Database Import
@@ -45,3 +46,6 @@ But the feuture I used the most is the splitting tool, with this I was able to s
 Each file consist out of 1 table, except for some small tables.</p>
 
 <p>With the smaller SQL files I was able to import the tables I need into MySQL with the help of HeidiSQL.</p>
+
+<p>The SQL file is imported in MySQL, but the end goal is to have it in MSSQL.<br>
+  I used <a href="https://www.microsoft.com/en-us/download/details.aspx?id=54257" target="_blank" rel="noopener noreferrer">SSMA (SQL Server Migration Assistant)</a> to migrate the MySQL datbase into MSSQL
