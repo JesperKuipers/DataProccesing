@@ -29,7 +29,6 @@ namespace DataProccesingAPI.Controllers
         }
 
         // PUT: api/player_summaries/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> Putplayer_summaries(long id, player_summaries player_summaries)
         {
@@ -60,7 +59,6 @@ namespace DataProccesingAPI.Controllers
         }
 
         // POST: api/player_summaries
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<player_summaries>> Postplayer_summaries(player_summaries player_summaries)
         {

@@ -17,7 +17,13 @@ namespace DataProccesingAPI.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<achievement_percentages>().HasKey(p => new { p.appid, p.Name });
+            //set all primary keys
+            modelBuilder.Entity<achievement_percentages>().HasKey(a => new { a.appid, a.Name });
+            modelBuilder.Entity<app_id_info>().HasKey(b => new { b.appid });
+            modelBuilder.Entity<games_1>().HasKey(c => new { c.steamid, c.appid });
+            modelBuilder.Entity<games_2>().HasKey(d => new { d.steamid, d.appid });
+            modelBuilder.Entity<games_daily>().HasKey(e => new { e.steamid, e.appid });
+            modelBuilder.Entity<player_summaries>().HasKey(f => new { f.steamid });
         }
     }
 }

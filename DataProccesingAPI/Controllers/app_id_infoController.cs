@@ -106,7 +106,6 @@ namespace DataProccesingAPI.Controllers
         }
 
         // PUT: api/app_id_info/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> Putapp_id_info(int id, app_id_info app_id_info)
         {
@@ -137,7 +136,6 @@ namespace DataProccesingAPI.Controllers
         }
 
         // POST: api/app_id_info
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<app_id_info>> Postapp_id_info(app_id_info app_id_info)
         {

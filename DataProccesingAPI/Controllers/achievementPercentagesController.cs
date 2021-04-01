@@ -68,13 +68,12 @@ namespace DataProccesingAPI.Controllers
         }
 
         // PUT: api/achievementPercentages/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Putachievement_percentages([Required] long id, [Required] string name, achievement_percentages achievement_percentages)
+        [HttpPut("{appid}")]
+        public async Task<IActionResult> Putachievement_percentages([Required] long appid, [Required] string name, achievement_percentages achievement_percentages)
         {
-            if (id != achievement_percentages.appid || name != achievement_percentages.Name)
+            if (appid != achievement_percentages.appid || name != achievement_percentages.Name)
             {
-                return BadRequest("Id or Name doesn't match in the body!");
+                return BadRequest("appid and or Name doesn't match in the body!");
             }
 
             _context.Entry(achievement_percentages).State = EntityState.Modified;
@@ -85,7 +84,7 @@ namespace DataProccesingAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!achievement_percentagesExists((int)id, name))
+                if (!achievement_percentagesExists((int)appid, name))
                 {
                     return NotFound("The record doesn't exist *sad raccoon noises*");
                 }
@@ -99,7 +98,6 @@ namespace DataProccesingAPI.Controllers
         }
 
         // POST: api/achievementPercentages
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<achievement_percentages>> Postachievement_percentages(achievement_percentages achievement_percentages)
         {
@@ -110,10 +108,10 @@ namespace DataProccesingAPI.Controllers
         }
 
         // DELETE: api/achievementPercentages/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Deleteachievement_percentages([Required] long id, [Required] string name)
+        [HttpDelete("{appid}")]
+        public async Task<IActionResult> Deleteachievement_percentages([Required] long appid, [Required] string name)
         {
-            var achievement_percentages = await _context.achievement_percentages.FindAsync(id, name);
+            var achievement_percentages = await _context.achievement_percentages.FindAsync(appid, name);
             if (achievement_percentages == null)
             {
                 return NotFound();

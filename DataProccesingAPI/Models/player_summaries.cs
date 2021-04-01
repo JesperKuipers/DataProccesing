@@ -10,8 +10,9 @@ namespace DataProccesingAPI.Models
     [Table("player_summaries", Schema = "datasetsteam")]
     public class player_summaries
     {
-#pragma warning disable CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
-        [Key]
+#pragma warning disable CS8632 // Question mark is needed, cause these can be empty in the database. This just supresses the mention.
+        [Required]
+        [Range(typeof(Int64), "10000000000000000", "99999999999999999", ErrorMessage = "SteamID must be 17 digits")]
         public Int64 steamid { get; set; }
         public string? personaname { get; set; }
         public string? profileurl { get; set; }
@@ -32,10 +33,12 @@ namespace DataProccesingAPI.Models
         public string? gameserverip { get; set; }
         public string? gameextrainfo { get; set; }
         public Int64? cityid { get; set; }
-        public string? loccountrycode { get; set; }
+        [MaxLength(3)]
+        public string? loccountrycode { get; set; } //ISO-3166 code for the country
         public string? locstatecode { get; set; }
         public Int64? loccityid { get; set; }
+        [DataType(DataType.DateTime)]
         public DateTime? dateretrieved { get; set; }
-#pragma warning restore CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
+#pragma warning restore CS8632 // Question mark is needed, cause these can be empty in the database. This just supresses the mention.
     }
 }

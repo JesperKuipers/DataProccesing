@@ -29,13 +29,12 @@ namespace DataProccesingAPI.Controllers
         }
 
         // PUT: api/games_daily/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Putgames_daily(long id, games_daily games_daily)
+        [HttpPut("{steamid}")]
+        public async Task<IActionResult> Putgames_daily([Required] long steamid, [Required] long appid, games_daily games_daily)
         {
-            if (id != games_daily.steamid)
+            if (steamid != games_daily.steamid || appid != games_daily.appid)
             {
-                return BadRequest("Id doesn't match id in body!");
+                return BadRequest("steamid and or appid doesn't match id in body!");
             }
 
             _context.Entry(games_daily).State = EntityState.Modified;
@@ -46,7 +45,7 @@ namespace DataProccesingAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!games_dailyExists(id))
+                if (!games_dailyExists((int)steamid, (int)appid))
                 {
                     return NotFound("The record doesn't exist *sad raccoon noises*");
                 }
@@ -60,7 +59,6 @@ namespace DataProccesingAPI.Controllers
         }
 
         // POST: api/games_daily
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<games_daily>> Postgames_daily(games_daily games_daily)
         {
@@ -71,10 +69,10 @@ namespace DataProccesingAPI.Controllers
         }
 
         // DELETE: api/games_daily/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Deletegames_daily(long id)
+        [HttpDelete("{steamid}")]
+        public async Task<IActionResult> Deletegames_daily([Required] long steamid, [Required] long appid)
         {
-            var games_daily = await _context.games_daily.FindAsync(id);
+            var games_daily = await _context.games_daily.FindAsync(steamid, appid);
             if (games_daily == null)
             {
                 return NotFound();
@@ -86,9 +84,16 @@ namespace DataProccesingAPI.Controllers
             return NoContent();
         }
 
-        private bool games_dailyExists(long id)
+        private bool games_dailyExists(int steamid, int appid)
         {
-            return _context.games_daily.Any(e => e.steamid == id);
+            if (_context.games_daily.Any(e => e.appid == steamid) && _context.games_daily.Any(b => b.appid == appid))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -11,13 +11,19 @@ namespace DataProccesingAPI.Models
     [Table("app_id_info", Schema = "datasetsteam")]
     public class app_id_info
     {
-        [Key]
+        [Required]
         public Int64 appid { get; set; }
+        [Required]
         public string Title { get; set; }
+        [Required]
         public string Type { get; set; }
         [DataType(DataType.DateTime)]
+        [Required]
         public DateTime Release_Date { get; set; }
+        [Range(-1, 100, ErrorMessage = "Value for {0} must be between {1} and {2}")]
+        [Required]
         public int Rating { get; set; }
+        [Required]
         public int Required_Age { get; set; }
         public int? Is_Multiplayer { get; set; }
         [NotMapped]

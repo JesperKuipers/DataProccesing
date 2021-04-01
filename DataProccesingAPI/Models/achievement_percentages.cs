@@ -11,7 +11,6 @@ namespace DataProccesingAPI.Models
     [Table("achievement_percentages", Schema = "datasetsteam")]
     public class achievement_percentages
     {
-        [Key]
         [Required]
         public Int64 appid { get; set; }
         [Required]

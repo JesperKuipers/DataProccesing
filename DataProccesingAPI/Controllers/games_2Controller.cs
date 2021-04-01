@@ -29,13 +29,12 @@ namespace DataProccesingAPI.Controllers
         }
 
         // PUT: api/games_2/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Putgames_2(long id, games_2 games_2)
+        [HttpPut("{steamid}")]
+        public async Task<IActionResult> Putgames_2([Required] long steamid, [Required] long appid, games_2 games_2)
         {
-            if (id != games_2.steamid)
+            if (steamid != games_2.steamid || appid != games_2.appid)
             {
-                return BadRequest("Id doesn't match id in body!");
+                return BadRequest("steamid and or appid doesn't match id in body!");
             }
 
             _context.Entry(games_2).State = EntityState.Modified;
@@ -46,7 +45,7 @@ namespace DataProccesingAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!games_2Exists(id))
+                if (!games_2Exists((int)steamid, (int)appid))
                 {
                     return NotFound("The record doesn't exist *sad raccoon noises*");
                 }
@@ -60,7 +59,6 @@ namespace DataProccesingAPI.Controllers
         }
 
         // POST: api/games_2
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<games_2>> Postgames_2(games_2 games_2)
         {
@@ -71,10 +69,10 @@ namespace DataProccesingAPI.Controllers
         }
 
         // DELETE: api/games_2/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Deletegames_2(long id)
+        [HttpDelete("{steamid}")]
+        public async Task<IActionResult> Deletegames_2([Required] long steamid, [Required] long appid)
         {
-            var games_2 = await _context.games_2.FindAsync(id);
+            var games_2 = await _context.games_2.FindAsync(steamid, appid);
             if (games_2 == null)
             {
                 return NotFound();
@@ -86,9 +84,16 @@ namespace DataProccesingAPI.Controllers
             return NoContent();
         }
 
-        private bool games_2Exists(long id)
+        private bool games_2Exists(int steamid, int appid)
         {
-            return _context.games_2.Any(e => e.steamid == id);
+            if (_context.games_2.Any(e => e.appid == steamid) && _context.games_2.Any(b => b.appid == appid))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
