@@ -63,7 +63,7 @@ Each file consists out of 1 table, except for some small tables.</p>
     - As of last I created one GET, POST, PUT and DELETE for each database table as are the requirements from school.<br></p>
 
 ## Consumer application
-An application made in .net forms which uses the REST API.
+(W.I.P.) An application made in .net forms which uses the REST API.
 
 ## How to install the database
 <img align="right" src="https://user-images.githubusercontent.com/44586411/113137878-62904780-9225-11eb-91ca-7d19ca978e76.gif" alt="Gif that shows the process to import a SSMS back-up"></img>
