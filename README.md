@@ -6,8 +6,8 @@
 <p>Welcome to my school project for the class dataproccesing.</p>
 
 ## Introduction
-<p>This project is made for a school assignment where I needed to process data from a database to a consumer application.</p><br>
-<p>The goal is to make a REST API that uses XML and JSON.
+<p>This project is made for a school assignment where I needed to process data from a database to a consumer application.<br>
+The goal is to make a REST API that uses XML and JSON.
 We need to make an application that uses the REST API, the apps need to switch between XML and JSON.</p>
 
 ## Table of Contents
